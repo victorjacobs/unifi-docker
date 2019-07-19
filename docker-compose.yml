@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  unifi:
+    build: .
+    volumes:
+      - ./data:/unifi
+    ports:
+      - 6789:6789
+      - 8080:8080
+      - 8443:8443
+      - 8880:8880
+      - 8843:8843
+      - 3478:3478/udp
+  mongo:
+    image: mongo:3.4
