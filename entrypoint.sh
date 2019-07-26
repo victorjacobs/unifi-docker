@@ -3,15 +3,15 @@ JVM_MAX_HEAP_SIZE=${JVM_MAX_HEAP_SIZE:-1024M}
 
 JVM_EXTRA_OPTS=""
 
-if [ ! -z "${JVM_MAX_HEAP_SIZE}" ]; then
+if [ -n "${JVM_MAX_HEAP_SIZE}" ]; then
   JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Xmx${JVM_MAX_HEAP_SIZE}"
 fi
 
-if [ ! -z "${JVM_INIT_HEAP_SIZE}" ]; then
+if [ -n "${JVM_INIT_HEAP_SIZE}" ]; then
   JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Xms${JVM_INIT_HEAP_SIZE}"
 fi
 
-if [ ! -z "${JVM_MAX_THREAD_STACK_SIZE}" ]; then
+if [ -n "${JVM_MAX_THREAD_STACK_SIZE}" ]; then
   JVM_EXTRA_OPTS="${JVM_EXTRA_OPTS} -Xss${JVM_MAX_THREAD_STACK_SIZE}"
 fi
 
@@ -23,4 +23,4 @@ UNIFI_CMD="java ${JVM_OPTS} -jar lib/ace.jar start"
 
 ${UNIFI_CMD} &
 
-sleep 5 && tail -n 100 -f logs/server.log
+tail -F --pid=$! logs/server.log
