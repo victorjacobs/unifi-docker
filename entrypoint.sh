@@ -21,6 +21,8 @@ JVM_OPTS="${JVM_EXTRA_OPTS}
 
 UNIFI_CMD="java ${JVM_OPTS} -jar lib/ace.jar start"
 
+echo "Running $UNIFI_CMD"
+
 ${UNIFI_CMD} &
 
 tail -F --pid=$! logs/server.log

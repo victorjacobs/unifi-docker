@@ -20,7 +20,7 @@ COPY --from=builder /etc/passwd /etc/passwd
 COPY --from=builder /etc/group /etc/group
 
 RUN apt-get update && \
-        apt-get -y --no-install-recommends install binutils curl default-jre-headless jsvc && \
+        apt-get -y --no-install-recommends install binutils curl default-jre-headless && \
         rm -rf /var/lib/apt/lists/* && \
         dpkg --force-all -i /tmp/unifi.deb && \
         rm /tmp/unifi.deb && \
@@ -34,6 +34,6 @@ COPY entrypoint.sh /usr/lib/unifi/entrypoint.sh
 
 USER unifi
 WORKDIR /usr/lib/unifi
-EXPOSE 6789/tcp 8080/tcp 8443/tcp 8880/tcp 8843/tcp 3478/udp
+EXPOSE 6789/tcp 8080/tcp 8443/tcp 8880/tcp 8843/tcp 3478/udp 10001/udp 1900/udp
 
 ENTRYPOINT ["./entrypoint.sh"]
