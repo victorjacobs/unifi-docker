@@ -18,4 +18,4 @@ Example usage seen in `docker-compose.yml`:
 docker-compose up
 ```
 
-Because the controller wrongly detects its own IP address (Docker IP address instead of host address), you need to enable 'Override inform host with controller hostname/IP' in the controller settings and set the host IP address in 'Controller Hostname/IP'.
+Because the controller wrongly detects its own IP address (Docker IP address instead of host address), you need to enable `Override inform host with controller hostname/IP` in the controller settings and set the host IP address in `Controller Hostname/IP`.
