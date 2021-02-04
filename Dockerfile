@@ -1,7 +1,7 @@
 FROM debian:stretch AS builder
 
-ENV PKGURL https://dl.ui.com/unifi/6.0.43/unifi_sysvinit_all.deb
-ENV SHASUM 7ecaa303ad4900811e2e20030243a3236ca7983f7790d5c392245f201ce137b5
+ENV PKGURL https://dl.ui.com/unifi/6.0.45/unifi_sysvinit_all.deb
+ENV SHASUM be536b2e1295c14db604a03fe2236303b0ad7927e168039f39d8882bba10f0d6
 
 WORKDIR /tmp
 
