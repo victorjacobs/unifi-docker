@@ -20,17 +20,19 @@ COPY --from=builder /etc/passwd /etc/passwd
 COPY --from=builder /etc/group /etc/group
 
 RUN apt-get update && \
-        apt-get -y --no-install-recommends install binutils curl default-jre-headless && \
+        apt-get -y --no-install-recommends install binutils curl default-jre-headless procps && \
         rm -rf /var/lib/apt/lists/* && \
         dpkg --force-all -i /tmp/unifi.deb && \
         rm /tmp/unifi.deb && \
         ln -s /unifi /usr/lib/unifi/data && \
-        mkdir /usr/lib/unifi/logs && \
+        mkdir -p /usr/lib/unifi/logs && \
         chown unifi:unifi /usr/lib/unifi/logs && \
-        mkdir /usr/lib/unifi/run && \
-        chown unifi:unifi /usr/lib/unifi/run
+        mkdir -p /usr/lib/unifi/run && \
+        chown unifi:unifi /usr/lib/unifi/run && \
+        mkdir -p /usr/lib/unifi/bin
 
 COPY entrypoint.sh /usr/lib/unifi/entrypoint.sh
+COPY scripts/mongod /usr/lib/unifi/bin
 
 USER unifi
 WORKDIR /usr/lib/unifi

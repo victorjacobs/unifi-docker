@@ -1,0 +1,6 @@
+#!/bin/sh
+# Since 7.2.92 the Unifi controller tries to start a Mongo server
+# by running /usr/lib/unifi/bin/mongod. It is very unhappy if it
+# does not find that script. This script tricks the controller into
+# believing it started mongod.
+sleep infinity
