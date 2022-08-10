@@ -3,7 +3,7 @@ services:
   unifi:
     build: .
     volumes:
-      - ./data:/unifi
+      - ./data:/usr/lib/unifi/data
     ports:
       - 6789:6789
       - 8080:8080
