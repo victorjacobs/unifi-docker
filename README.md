@@ -1,7 +1,5 @@
 # unifi-docker
 
-[![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/vjacobs/unifi.svg)](https://hub.docker.com/r/vjacobs/unifi)
-
 Unifi Controller dockerized.
 
 ## Usage
