@@ -1,4 +1,4 @@
-FROM debian:stretch AS builder
+FROM debian:bullseye AS builder
 
 ENV PKGURL https://dl.ui.com/unifi/7.3.76/unifi_sysvinit_all.deb
 ENV SHASUM fe0fe00808424fef1ec980e222417c5a74c85a01339de8806075e3d69623fdd0
@@ -13,7 +13,7 @@ RUN apt-get update && \
         useradd -u 1103 unifi
 
 
-FROM debian:stretch
+FROM debian:bullseye
 
 COPY --from=builder /tmp/unifi.deb /tmp/unifi.deb
 COPY --from=builder /etc/passwd /etc/passwd
