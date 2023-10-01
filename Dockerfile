@@ -1,7 +1,7 @@
 FROM debian:bullseye AS builder
 
-ENV PKGURL https://dl.ui.com/unifi/7.4.162/unifi_sysvinit_all.deb
-ENV SHASUM 069652f793498124468c985537a569f3fe1d8dd404be3fb69df6b2d18b153c4c
+ENV PKGURL https://dl.ui.com/unifi/7.5.176/unifi_sysvinit_all.deb
+ENV SHASUM a6bb05ab4f7362b07be29fcc18a8f0bd97edc3bf24f706c8bdae7115d93e66dc
 
 WORKDIR /tmp
 
