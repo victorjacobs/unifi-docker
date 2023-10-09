@@ -19,7 +19,7 @@ JVM_OPTS="${JVM_EXTRA_OPTS}
   -Djava.awt.headless=true
   -Dfile.encoding=UTF-8"
 
-UNIFI_CMD="java ${JVM_OPTS} -jar lib/ace.jar start"
+UNIFI_CMD="java --add-opens java.base/java.time=ALL-UNNAMED ${JVM_OPTS} -jar lib/ace.jar start"
 
 echo "Running $UNIFI_CMD"
 
