@@ -1,7 +1,7 @@
 FROM debian:bookworm AS builder
 
-ENV PKGURL https://dl.ui.com/unifi/7.5.176/unifi_sysvinit_all.deb
-ENV SHASUM a6bb05ab4f7362b07be29fcc18a8f0bd97edc3bf24f706c8bdae7115d93e66dc
+ENV PKGURL https://dl.ui.com/unifi/7.5.187/unifi_sysvinit_all.deb
+ENV SHASUM 6b9925f2065b467852fe9d6298f97bb28334fd04851dd334fb66cd9837dcd666
 
 WORKDIR /tmp
 
