@@ -2,6 +2,7 @@ version: '3.7'
 services:
   unifi:
     build: .
+    user: 1000:1000
     volumes:
       - ./data:/usr/lib/unifi/data
     ports:
@@ -12,4 +13,4 @@ services:
       - 8843:8843
       - 3478:3478/udp
   mongo:
-    image: mongo:3.4
+    image: mongo:3.6
